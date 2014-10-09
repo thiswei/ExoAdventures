@@ -24,41 +24,30 @@ class Hallway < Scene
   end
 end
 
-# class LivingRoom < Scene
+class LivingRoom < Scene
+  def initialize
+    @intro = "You are now in the living room."
+    @room_name = "living room"
+  end
+end
 
-# end
+class Kitchen < Scene
+  def initialize
+    @intro = "You are now in the kitchen."
+    @room_name = "kitchen"
+  end
+end
 
-# class Kitchen < Scene
+class Bathroom < Scene
+  def initialize
+    @intro = "You are now in the bathroom."
+    @room_name = "bathroom"
+  end
+end
 
-# end
-
-# class Bathroom < Scene
-
-# end
-
-# class Bedroom < Scene
-
-# end
-
-#Rob's example:
-# class Scene
-  
-#   attr_accessor :entry
-
-#   def initialize(entry)
-#     @entry = entry
-#     @scene.film
-#   end
-
-# end
-
-# class KitchenScene < Scene
-
-#   attr_accessor :counter
-
-#   def initialize(entry, counter)
-#     super
-#     @counter = counter
-    
-#   end
-# end
+class Bedroom < Scene
+  def initialize
+    @intro = "You are now in the bedroom."
+    @room_name = "bedroom"
+  end
+end

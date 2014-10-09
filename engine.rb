@@ -2,7 +2,7 @@ require './scene'
 
 class Engine
 
- attr_accessor :map
+ attr_accessor :map, :current_scene
 
   def initialize
      @map = []
@@ -14,6 +14,10 @@ class Engine
   def mapper
     @map << Yard.new
     @map << Hallway.new
+    @map << LivingRoom.new
+    @map << Kitchen.new
+    @map << Bathroom.new
+    @map << Bedroom.new
   end
 
   def get_map
@@ -35,9 +39,14 @@ class Engine
   end
 
   def next_scene
-    @current_scene = @map[@scene_index]
-    puts @current_scene.open_scene
-    @scene_index += 1
+    if @scene_index < @map.length    
+      @current_scene = @map[@scene_index]
+      puts @current_scene.open_scene
+      @scene_index += 1
+    else
+      puts "Uh oh! You've run out of rooms!\nPlay again when we've added more things to this game. ^_^"
+      exit
+    end
   end
   
 end
