@@ -4,7 +4,13 @@ puts "Welcome to Li's Extra Ordinary Adventures!"
 
 new_game = Engine.new
 if new_game.start
-  puts "Wha!"
+    alive = true
+    while alive
+        puts "I'm playing in the game loop! Fancy!"
+        alive = false
+    end 
+
+    puts "HAHAHA! You lose, sucker!"
 end
 
 
@@ -14,5 +20,3 @@ end
   #   valid??
   #     yes: give to engine to do something
   #     no: give error annd get new input??
-
-  # puts "HAHAHAHAH You lose sucker!

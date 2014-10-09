@@ -39,8 +39,5 @@ class Engine
     puts @current_scene.open_scene
     @scene_index += 1
   end
-
-  def change_scene
-  end
-
+  
 end
