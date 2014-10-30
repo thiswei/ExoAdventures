@@ -9,11 +9,17 @@ if new_game.start
     puts "To move through each room, type \"Move\"."
     while alive
         user_input = gets.chomp.downcase
-        if user_input == "move"
-          puts new_game.current_scene.success_message
-          new_game.next_scene
-        else
-          puts "Try again."
+        # item = user_input[/[^[use ]][.]+/] 
+        case user_input 
+          when "move"
+            puts new_game.current_scene.success_message
+            new_game.next_scene
+          # when ("use #{item}")
+          #   puts "Li used #{item}!"
+          when "help"
+            puts "move - moves Li to the next room.\nhelp - lists all valid commands."
+          else
+            puts "Not a valid move. Type 'help' to see a list of moves."
         end
     end 
 
